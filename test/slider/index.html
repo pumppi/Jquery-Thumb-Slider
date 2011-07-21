@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>jQuery Test Suite</title>
+	<link rel="Stylesheet" media="screen" href="../qunit.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../../dist/slider.js"></script>
+	<script type="text/javascript" src="../qunit.js"></script>
+</head>
+<body id="body">
+	<h3>Test</h3>
+
+	<h1 id="qunit-header">QUnit example</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture">test markup, will be hidden</div>
+	
+	<!-- copy this -->
+	<div id="slider" class="clearfix">
+		<div id="sliderContent">
+			<div id="arrow"></div>
+			<div id="sliderTextContent">
+			</div>
+		</div>
+		<div id="sliderThumbs">
+			<ul>
+				<li class="thumb">
+					<div class="image">
+						<img src="slider/image1.png" alt="" />
+					</div>
+					<div class="text">
+						Lorem <br />
+						Lorem Ipsum
+					</div>
+					<div class="clearBoth"></div>
+					<div class="sliderText">
+						<h3>Lorem Ipsum</h3>
+						<p>
+							Sed nunc ipsum, gravida sit amet rutrum id, auctor interdum mi. 
+						</p>
+						<img class="sliderImage" src="slider/image1.png" />
+					</div>
+				</li>
+				<li class="thumb">
+					<div class="image">
+						<img src="slider/image2.png" alt="" />
+					</div>
+					<div class="text">
+						Lorem <br />
+						Lorem Ipsum
+					</div>
+					<div class="clearBoth"></div>
+					<div class="sliderText">
+						<h3>Lorem Ipsum</h3>
+						<p>
+							Sed nunc ipsum, gravida sit amet rutrum id, auctor interdum mi. 
+						</p>
+						<img class="sliderImage" src="slider/image2.png" />
+					</div>
+				</li>
+				<li class="thumb">
+					<div class="image">
+						<img src="slider/image3.png" alt="" />
+					</div>
+					<div class="text">
+						Lorem <br />
+						Lorem Ipsum
+					</div>
+					<div class="clearBoth"></div>
+					<div class="sliderText">
+						<h3>Lorem Ipsum</h3>
+						<p>
+							Sed nunc ipsum, gravida sit amet rutrum id, auctor interdum mi. 
+						</p>
+						<img class="sliderImage" src="slider/image3.png" />
+					</div>
+				</li>
+				<li class="thumb">
+					<div class="image">
+						<img src="slider/image4.png" alt="" />
+					</div>
+					<div class="text">
+						Lorem <br />
+						Lorem Ipsum
+					</div>
+					<div class="clearBoth"></div>
+					<div class="sliderText">
+						<h3>Lorem Ipsum</h3>
+						<p>
+							Sed nunc ipsum, gravida sit amet rutrum id, auctor interdum mi. 
+						</p>
+						<img class="sliderImage" src="slider/image4.png" />						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- copy this ends -->
+	
+	<style type="text/css" media="screen">
+		body{
+			background-color:#D4D4D4;
+		}
+		
+		/* Clearfix */
+		.clearfix:after{
+		    clear: both;
+		    content: ". ";
+		    display: block;
+		    height: 0;
+		    line-height: 0;
+		    visibility: hidden;
+		}
+		.clearfix{
+		    display: inline-block;
+		}
+		html[xmlns] .clearfix {
+		    display: block;
+		}
+		* html .clearfix {
+		    height: 1%;
+		}
+		/* Slider */
+		#slider{
+			background-color:#fff;
+			width:1000px;
+			margin:10px auto;
+		}
+		#slider .sliderImage{
+			display:none;
+		}
+
+		#slider #sliderThumbs{
+			float:right;
+			min-width:39%;
+			width:39%;
+		}
+		#sliderThumbs ul{
+			margin:0;
+			padding:0;
+		}
+		#sliderThumbs ul li{
+			list-style:none;
+		}
+		
+		#slider #sliderContent{
+			float:left;
+			min-width:60%;
+			width:60%;
+			position:relative;
+		}
+
+		#slider #arrow{
+			background-image:url(bg/arrow.png);
+			height:30px;
+			right:0px;
+			width:22px;
+			z-index:9;
+			position:absolute;
+		}
+		#slider #sliderTextContent{
+			background-color:#000;
+		    bottom: 0;
+			color:#ffffff;
+		    height: 40px;
+		    padding: 2%;
+			width:96%;
+		    position: absolute;
+			opacity:0.7;
+			overflow:hidden;
+		}
+		#slider #sliderTextContent h3{
+			color:#dcd6c5;
+			margin:2px 0px;
+		}
+		
+		#slider #sliderTextContent p{
+			color:#fff;
+			margin:2px 0px;
+		}
+
+
+
+		#sliderThumbs .thumb{
+			background-image:url(bg/slider.png);
+			background-repeat:repeat-x;
+			background-position:0px -71px;
+			color:#b8d1ff;
+			cursor:pointer;
+			height:70px;
+		}
+		#sliderThumbs .image{
+		    float: left;
+		    height: 56px;
+		    overflow: hidden;
+		    padding-left: 10px;
+		    padding-right: 10px;
+		    padding-top: 7px;
+		}
+		#sliderThumbs .image img{
+			height: 56px;
+			width:76px;
+		}
+
+		#sliderThumbs .text{
+			float:left;
+			font-size:15px;
+			padding-top:20px;
+		}
+
+		#sliderThumbs .sliderText{
+			display:none;
+		}
+
+		#sliderThumbs .selected{
+			color:#395fa4;
+			background-position:0px 0px;
+		}
+		
+	</style>
+	
+	<script>
+	
+	$(document).ready(function(){
+		$('#slider').thumbSlider();
+	});
+	
+	</script>
+</body>
+</html>
